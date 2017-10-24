@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="icon" type="image/x-icon" href="honda.ico" />
+    <title>Feedback</title>
+<style> h1{color:red;
+     font-family:georgia;
+     text-align:center;
+     text-shadow:7px 7px 7px black;
+     font-size:35px}
+h2{color:red;
+     font-family:georgia;
+     text-align:left;}
+body{background-color:white;
+        background-image:url(uni1.jpg);
+        background-repeat:
+        font-family:georgia;
+        text-align:left;}
+p{font-size:20px;font-family:georgia;
+   color:white;}
+div{text-align:center;background-color:red;
+     font-size:23px;}
+table{color:black;}   
+a{
+color:black}
+</style>
+  </head>
+<body>
+<h1> Honda Motorcycle Showroom</h1>
+<font color="red" size="4"><b><center>Welcome to our Cycle Showroom!</b><br></center><br>
+
+<div> <b><a href="home.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="cycleList.html">Cycle-List</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="InfoPrice.html">Info & Price</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="login.html">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="members.html">Members</a></b></div>
+
+<h2><b>Customer Feedback</b></h2>
+ <p><font color="green">We are waiting your Feedback!<br>
+ Thank You all customers.</font></p>  
+
+<form><center>
+<table border="0">
+
+<tr>
+<td align="right">Name:</td>
+<td><input type="text" name="Name" id="name" value="" /></td>
+</tr>
+
+<tr>
+<td align="right">Email:</td>
+<td><input type="email" name="email" id="email" value="" /></td>
+</tr>
+
+<tr>
+ <td align="right">Ph Number:</td>
+<td><input type="text" id="phnum" value=""></td>
+</tr>
+   
+<tr>
+<td align="right">City:</td>
+<td><input type="text" name="city" value="" id="city" /></td>
+</tr>
+
+ 
+
+ <tr>  
+<td align="right">Gender:</td>
+<td><input type="radio" class="radio" name="gender" id="female" value="F"/>Female
+<input type="radio" class="radio" name="gender" id="male" value="M" />Male</td>
+</tr>
+<tr>   
+<td align="right">Zip code:</td>
+<td> <input type="text" name="zipcode" id="zipcode" value=""/></td>
+</tr><br>
+
+<tr>   
+<td align="right">Feedback:</td>
+<td> <textarea name="feedback" id="feedback" rows="5" cols="20"></textarea></td>
+</tr><br>
+<tr>
+<td>&nbsp;</td>
+<td><input  type="submit" id="sbutton" class="submit greenBtnBig" value="Submit" />
+<input  type="submit" id="cbutton" class="submit greenBtnBig" value="Cancel" /></td>
+</tr>
+</table>
+</center>
+ </form>
+<script type="text/javascript">
+        var btn1 = document.getElementById("sbutton");
+        btn1.addEventListener("click", function(){
+   alert("We received your feedback."+"\nWe will reply as soon as! "+"\nThanks You!!");}, true);
+
+var btn2 = document.getElementById("cbutton");
+        btn2.addEventListener("click", function(){
+             alert("You clicked Cancel!!"+"\nThanks You!!");
+        }, true);
+</script>
+<br><br>
+
+<font color="green" size="4"><b><center>Thank You  for  visiting Our Website!<center/></b></font><br><br>
+<b><hr></b>
+
+<center><p><font color="red" size="4"><b>Copyright&copy;2016-2017 Group-VI(UCSP)</b></font></p></center>
+<b><hr></b><br><br>
+ </body>
+</html>
