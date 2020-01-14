@@ -1,10 +1,10 @@
 import os,time,platform
 sq=["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"]
-sq1=["0","","","","","","","","","","","","","","","",""]
 pA="A"
 pB="B"
 times=0
 def main():
+    global times
     times=0
     opersys=platform.system()
     if opersys =="Windows":
@@ -14,7 +14,6 @@ def main():
     global pA,pB,sq
     for i in range(1,17):
         sq[i]=str(i)
-        sq1[i]=""
     pA=input("Enter Player-1 character: ")
     pB=input("Enter Player-2 character: ")
     if (pA not in sq) and (pB not in sq):
@@ -37,6 +36,10 @@ def play():
             print(f"Invalid Move! \nPlayer {turn} turns back in 3 sec...")
             time.sleep(3)
             play()
+        if choose=='0':
+            print("Bye!!!")
+            time.sleep(3)
+            exit()
         if turn == 1:
             mark(pA,choose)
         else:
@@ -52,7 +55,6 @@ def play():
 def mark(player,num):
     if num == sq[int(num)]:
         sq[int(num)]=player
-        sq1[int(num)]=player
         global times
         playerno=times%2+1
         result=checkWin()
@@ -75,78 +77,26 @@ def mark(player,num):
 
 def checkWin():
     res=False
-    if sq[1] == sq[2] and sq[1]:
-        if sq[2] == sq[3]:
-            res=True
-    elif sq[2] == sq[3]:
-        if sq[3] == sq[4]:
-            res=True
-    elif sq[5] == sq[6]:
-        if sq[6] == sq[7]:
-            res=True
-    elif sq[6] == sq[7]:
-        if sq[7] == sq[8]:
-            res=True
-    elif sq[9] == sq[10]:
-        if sq[10] == sq[11]:
-            res=True
-    elif sq[10] == sq[11]:
-        if sq[11] == sq[12]:
-            res=True
-    elif sq[13] == sq[14]:
-        if sq[14] == sq[15]:
-            res=True
-    elif sq[14] == sq[15]:
-        if sq[15] == sq[16]:
-            res=True
-    elif sq[1] == sq[5]:
-        if sq[5] == sq[9]:
-            res=True
-    if sq[5] == sq[9]:
-        if sq[9] == sq[13]:
-            res=True
-    elif sq[2] == sq[6]:
-        if sq[6] == sq[10]:
-            res=True
-    elif sq[6] == sq[10]:
-        if sq[10] == sq[14]:
-            res=True
-    elif sq[3] == sq[7]:
-        if sq[7] == sq[11]:
-            res=True
-    elif sq[7] == sq[11]:
-        if sq[11] == sq[15]:
-            res=True
-    elif sq[4] == sq[8]:
-        if sq[8] == sq[12]:
-            res=True
-    elif sq[8] == sq[12]:
-        if sq[12] == sq[16]:
-            res=True
-    elif sq[1] == sq[6]:
-        if sq[6] == sq[11]:
-            res=True
-    elif sq[6] == sq[11]:
-        if sq[11] == sq[16]:
-            res=True
-    if sq[2] == sq[7]:
-        if sq[7] == sq[12]:
-            res=True
-    elif sq[5] == sq[10]:
-        if sq[10] == sq[15]:
-            res=True
-    elif sq[4] == sq[7]:
-        if sq[7] == sq[10]:
-            res=True
-    elif sq[7] == sq[10]:
-        if sq[10] == sq[13]:
-            res=True
-    elif sq[3] == sq[6]:
-        if sq[6] == sq[9]:
-            res=True
-    elif sq[8] == sq[11]:
-        if sq[11] == sq[14]:
-            res=True
+    if sq[1]==sq[2]==sq[3]==sq[4]:
+        res=True
+    elif sq[5]==sq[6]==sq[7]==sq[8]:
+        res=True
+    elif sq[9]==sq[10]==sq[11]==sq[12]:
+        res=True
+    elif sq[13]==sq[14]==sq[15]==sq[16]:
+        res=True
+    elif sq[1]==sq[6]==sq[11]==sq[16]:
+        res=True
+    elif sq[4]==sq[7]==sq[10]==sq[13]:
+        res=True
+    elif sq[1]==sq[5]==sq[9]==sq[13]:
+        res=True
+    elif sq[2]==sq[6]==sq[10]==sq[14]:
+        res=True
+    elif sq[3]==sq[7]==sq[11]==sq[15]:
+        res=True
+    elif sq[4]==sq[8]==sq[12]==sq[16]:
+        res=True
     return res
 
 def board():
@@ -155,23 +105,23 @@ def board():
         os.system('cls')  # For Windows
     else:
         os.system('clear')  # For Linux/OS X
-    print(f"Player 1: {pA}\t Player 2: {pB}\n")
-    print(sq1[1],"\t|",sq1[2],"\t|",sq1[3],"\t|",sq1[4])
+    print(f"Player 1: {pA}\t Player 2: {pB}\t 0 for exit the game\n")
+    print(sq[1],"\t|",sq[2],"\t|",sq[3],"\t|",sq[4])
     print("-"*8,end="|")
     print("-"*7,end="|")
     print("-"*7,end="|")
     print("-"*8)
-    print(sq1[5],"\t|",sq1[6],"\t|",sq1[7],"\t|",sq1[8])
+    print(sq[5],"\t|",sq[6],"\t|",sq[7],"\t|",sq[8])
     print("-"*8,end="|")
     print("-"*7,end="|")
     print("-"*7,end="|")
     print("-"*8)
-    print(sq1[9],"\t|",sq1[10],"\t|",sq1[11],"\t|",sq1[12])
+    print(sq[9],"\t|",sq[10],"\t|",sq[11],"\t|",sq[12])
     print("-"*8,end="|")
     print("-"*7,end="|")
     print("-"*7,end="|")
     print("-"*8)
-    print(sq1[13],"\t|",sq1[14],"\t|",sq1[15],"\t|",sq1[16])
+    print(sq[13],"\t|",sq[14],"\t|",sq[15],"\t|",sq[16])
     print()
     
 __name__==main()
